@@ -1,0 +1,22 @@
+<h1>{{current.name}}</h1>
+<small><a href="{{link}}">{{link}}</a></small>
+<p>{{description}}</p>
+
+<div ng-show="loadText" class="searchbar">{{loadText}}</div>
+<div class="form-inline">
+	<div class="form-group">
+		
+		<input class="form-control" type="text" ng-model="searchText">
+	</div>
+	
+</div>
+<article ng-repeat="item in items | filter:searchText" ng-class-odd="'well'">
+	<h4>{{item.title}}</h4>
+	<div ng-bind-html-unsafe="item.description"></div>
+	<br>
+	<a ng-show="item.link" class="btn btn-default" href="{{item.link}}">Link</a>
+	<a ng-show="item.comments" class="btn btn-default" href="{{item.comments}}">Comments</a>
+	<em>{{item.pubDate}}</em>
+	<br>
+	<br><br>
+</article>
