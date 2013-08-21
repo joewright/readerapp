@@ -2,7 +2,7 @@
 
 angular.module('readsterApp')
 	.service('feeder', function feeder($http) {
-		var base = 'http://localhost:5000/parse?url=';
+		var base = 'http://xml-proxy.herokuapp.com/parse?url=';
 		return {
 			all: function() {
 				return [{
